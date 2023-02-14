@@ -1,0 +1,14 @@
+<section class="wrapper">
+  <div class="task-input" [formGroup]="form">
+    <img src="./assets/images/bars-icon.svg" alt="icon">
+    <input type="text" placeholder="Add a new task" formControlName="description">
+    <button class="clear-btn" (click)="doSubmit()" *ngIf="!isEdit">Add</button>
+    <button class="clear-btn" (click)="updateTask()" *ngIf="isEdit">Edit</button>
+  </div>
+
+  <app-controls></app-controls>
+
+  <ul class="task-box" *ngIf="tasks">
+    <app-task *ngFor="let task of tasks" [task]="task"></app-task>
+  </ul>
+</section>

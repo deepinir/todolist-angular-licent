@@ -1,0 +1,21 @@
+<li class="task">
+  <div class="task-title" (click)="checked()">
+    <input type="checkbox" [checked]="task.completed"/>
+    <p [ngClass]="{'checked': task.completed}">{{task?.description}}</p>
+  </div>
+  <div class="settings">
+    <i
+      class="uil uil-ellipsis-h"
+      #menu
+      (click)="toggleSettings=!toggleSettings"
+    ></i>
+    <ul class="task-menu" [ngClass]="{'show': toggleSettings}">
+      <li (click)="changeTaskState( actionEnum.EDIT, $event)">
+        <i class="uil uil-pen"></i>Edit
+      </li>
+      <li (click)="changeTaskState(actionEnum.DELETE, $event)">
+        <i class="uil uil-trash"></i>Delete
+      </li>
+    </ul>
+  </div>
+</li>

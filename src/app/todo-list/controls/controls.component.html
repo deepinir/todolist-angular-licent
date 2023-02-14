@@ -1,0 +1,8 @@
+<div class="controls">
+  <div class="filters">
+    <span [ngClass]="{'active': qParam === stateEnum.ALL}" id="all" (click)="changeState(stateEnum.ALL)">All</span>
+    <span [ngClass]="{'active': qParam === stateEnum.PENDING}" id="pending" (click)="changeState(stateEnum.PENDING)">Pending</span>
+    <span [ngClass]="{'active': qParam === stateEnum.COMPLETED}" id="completed" (click)="changeState(stateEnum.COMPLETED)">Completed</span>
+  </div>
+  <button class="clear-btn" (click)="clearAllTask()">Clear All</button>
+</div>
